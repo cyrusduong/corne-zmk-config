@@ -12,7 +12,7 @@
 #define BASE 0
 #define NUMS 1
 #define NAV 2
-#define KEEB 3
+#define BT 3
 
 // TAP_DANCE settings
 #define TAP_DANCE_MS 150
@@ -21,8 +21,8 @@
 
 // MACROS to make the the code easier to read
 // include name or reference in keymap
-// Format: 
-//      name        reference             keys, key2 
+// Format:
+//      name        reference             keys, key2
 //
 // Tap Dances
 #define TD_SHLOCK   &td0               // RSHIFT CAPSLOCK
@@ -38,12 +38,12 @@
 #define MV_DOWN     &kp LS(LG(DOWN))   // LSHIFT + LGUI + DOWN
 
 / {
-  behaviors{  
+  behaviors{ 
     td0: tap_dance_0 {
       compatible = "zmk,behavior-tap-dance";
-      label = "SHIFT_CAPSLOCK"; 
-      #binding-cells = <0>; 
-      tapping-term-ms = <TAP_DANCE_MS>; 
+      label = "SHIFT_CAPSLOCK";
+      #binding-cells = <0>;
+      tapping-term-ms = <TAP_DANCE_MS>;
       bindings = <&kp RSHIFT>, <&kp CAPSLOCK>;
     };
 
@@ -89,7 +89,7 @@
   //   compatible = "zmk,conditional-layers";
   //   tri_layer {
   //     if-layers = <NUMS NAV>;
-  //     then-layer = <KEEB>;
+  //     then-layer = <BT>;
   //   };
   // };
 
@@ -119,10 +119,10 @@
     // 2 - Navgation, Window Mgmt, Media
     nav_layer {
       bindings = <
-        &trans   &none    MV_LEFT   MV_UP    MV_DOWN    MV_RIGHT                                        &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &none     &none
-        &trans   &none    FC_LEFT   FC_UP    FC_DOWN    FC_RIGHT                                        &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &none     &none 
-        &tog BT  &none    &none     &none    &none      &kp PSCRN                                       &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP  &trans
-                                             &trans     &trans      &none                       &none   &trans      &trans
+        &trans   &none  MV_LEFT  MV_UP  MV_DOWN  MV_RIGHT                                              &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &none     &none
+        &trans   &none  FC_LEFT  FC_UP  FC_DOWN  FC_RIGHT                                              &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &none     &none 
+        &tog BT  &none  &none    &none  &none    &kp PSCRN                                             &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP  &trans
+                                        &trans   &trans     &none                               &none  &trans      &trans
       >;
     };
 
