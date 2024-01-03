@@ -133,7 +133,7 @@
       bindings = <
         &none    &none         &none         &none         &none        &none                          &rgb_ug RGB_SPD                     &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI  &none  &out OUT_TOG
         &none    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none                          &rgb_ug RGB_EFR                     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none  &none
-        &tog BT  &none         &none         &none         &none        &none                          &rbg_ug RGB_COLOR_HSB(360, 0, 100)  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none  &bt BT_CLR
+        &tog BT  &none         &none         &none         &none        &none                          &rgb_ug RGB_COLOR_HSB(360, 0, 100)  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none  &bt BT_CLR
                                                            &bootloader  &none  &none            &none  &rgb_ug RGB_TOG  &bootloader
       >;
     };
