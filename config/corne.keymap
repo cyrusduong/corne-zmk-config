@@ -28,6 +28,7 @@
 //
 // Tap Dances
 #define TD_SHLOCK   &td0               // RSHIFT CAPSLOCK
+#define TD_GUIMENU  &td1               // LGUI K_MENU
 // Focus Window (+i3 bindings)
 #define FC_LEFT     &kp LG(LEFT)       // LGUI + LEFT
 #define FC_RIGHT    &kp LG(RIGHT)      // LGUI + RIGHT
@@ -41,6 +42,13 @@
 
 / {
   behaviors{ 
+    td0: tap_dance_0 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "GUI_MENU";
+      #binding-cells = <0>;
+      tapping-term-ms = <TAP_DANCE_MS>;
+      bindings = <&kp L_GUI>, <&kp K_MENU>;
+    };
     td0: tap_dance_0 {
       compatible = "zmk,behavior-tap-dance";
       label = "SHIFT_CAPSLOCK";
@@ -110,7 +118,7 @@
         &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                  &kp J      &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
         &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                  &kp M      &kp N        &kp E      &kp I    &kp O     &kp SQT
         &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                  &kp K      &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &mt LSHIFT ENTER  &hlkr NUMS 0               &mo NAV   &kp SPACE  &kp K_CMENU
+                                         &kp LALT  &mt LSHIFT ENTER  &hlkr NUMS 0               &mo NAV   &kp SPACE  TD_GUIMENU
       >;
     };
 
