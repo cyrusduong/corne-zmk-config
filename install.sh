@@ -3,7 +3,7 @@
 # Escilate this script if it is not sudo
 if [ $EUID != 0 ]; then
 	sudo "$0" "$@"
-	return $?
+	exit $?
 fi
 
 # Define the source files

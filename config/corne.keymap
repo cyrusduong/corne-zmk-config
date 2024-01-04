@@ -70,7 +70,7 @@
 
     ne_esc { 
       timeout-ms = <COMBO_TIMEOUT_MS>;
-      key-positions = <20 21>; // N E
+      key-positions = <19 20>; // N E
       bindings = <&kp ESC>;
     };
 
