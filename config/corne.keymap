@@ -19,7 +19,7 @@
 // TAP_DANCE settings
 #define TAP_DANCE_MS 150
 #define HOLD_TAP_MS 200
-#define COMBO_TIMEOUT_MS 50
+#define COMBO_TIMEOUT_MS 25
 
 // MACROS to make the the code easier to read
 // include name or reference in keymap
