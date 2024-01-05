@@ -40,6 +40,10 @@
 #define MV_UP       &kp LS(LG(UP))     // LSHIFT + LGUI + UP
 #define MV_DOWN     &kp LS(LG(DOWN))   // LSHIFT + LGUI + DOWN
 
+&led_strip {
+    chain-length = <27>;
+};
+
 / {
   behaviors{ 
     td0: tap_dance_0 {
