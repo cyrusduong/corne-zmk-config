@@ -124,6 +124,14 @@
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
+    combo_menu { 
+      timeout-ms = <COMBO_TIMEOUT_MS>;
+      key-positions = <32 33>; // COMMA DOT
+      bindings = <&kp K_CMENU>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
+    };
+
+
     // xc_copy {
     //   timeout-ms = <COMBO_TIMEOUT_MS>;
     //   key-positions = <X C>;
