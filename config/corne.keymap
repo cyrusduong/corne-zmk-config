@@ -74,12 +74,12 @@
       bindings = <&mo>, <&key_repeat>;
     };
 
-    // bspcdel: backspace_del {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   #binding-cells = <0>;
-    //   bindings = <&kp BSPC>, <&kp DEL>;
-    //   mods = <MOD_LSFT>;
-    // };
+    bspcdel: backspace_del {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp BSPC>, <&kp DEL>;
+      mods = <MOD_LSFT>;
+    };
   };
 
   combos {
