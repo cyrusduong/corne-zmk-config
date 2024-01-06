@@ -122,7 +122,7 @@
         &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                  &kp J      &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
         &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                  &kp M      &kp N        &kp E      &kp I    &kp O     &kp SQT
         &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                  &kp K      &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &mt LSHIFT ENTER  &hlkr NUMS 0               &mo NAV   &kp SPACE  TD_GUIMENU
+                                         &kp LALT  &mt LSHIFT SPACE  &hlkr NUMS 0               &mo NAV   &kp SPACE  TD_GUIMENU
       >;
     };
 
