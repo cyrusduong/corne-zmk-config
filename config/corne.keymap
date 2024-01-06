@@ -19,7 +19,9 @@
 // TAP_DANCE settings
 #define TAP_DANCE_MS 150
 #define HOLD_TAP_MS 200
-#define COMBO_TIMEOUT_MS 20
+// This makes combos explicit, helps prevent rolling when typing normally
+#define COMBO_TIMEOUT_MS 16
+#define PRIOR_IDLE_MS 50
 
 // MACROS to make the the code easier to read
 // include name or reference in keymap
@@ -57,8 +59,9 @@
       label = "GUI_MENU";
       #binding-cells = <0>;
       tapping-term-ms = <TAP_DANCE_MS>;
-      bindings = <&kp LGUI>, <&kp K_CMENU>;
+      bindings = <&kp RGUI>, <&kp K_CMENU>;
     };
+
     td1: tap_dance_1 {
       compatible = "zmk,behavior-tap-dance";
       label = "SHIFT_CAPSLOCK";
@@ -81,6 +84,13 @@
       bindings = <&kp BSPC>, <&kp DEL>;
       mods = <MOD_LSFT>;
     };
+    
+    gresc: grave_escape {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp ESC>, <&kp GRAVE>;
+      mods = <(MOD_RGUI|MOD_RSFT)>;
+    };
   };
 
   combos {
@@ -90,24 +100,28 @@
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <14 15>; // R S
       bindings = <&kp ENTER>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
     st_esc { 
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <15 16>; // S T
       bindings = <&kp ESC>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
     ei_enter {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <20 21>; // E I
       bindings = <&kp ENTER>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
     ne_esc { 
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <19 20>; // N E
       bindings = <&kp ESC>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
     // xc_copy {
@@ -137,20 +151,20 @@
     // 0 - Base layer
     colemakdh_layer {
       bindings = <
-        &kp ESC    &kp Q   &kp W  &kp F  &kp P     &kp B                                                  &kp J             &kp L        &kp U      &kp Y    &kp SEMI  &bspcdel
-        &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                  &kp M             &kp N        &kp E      &kp I    &kp O     &kp SQT
-        &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                  &kp K             &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &mt LSHIFT SPACE &hlkr NUMS 0                &mo NAV   &mt LSHIFT SPACE  TD_GUIMENU
+        &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                      &kp J             &kp L        &kp U      &kp Y    &kp SEMI  &bspcdel
+        &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                      &kp M             &kp N        &kp E      &kp I    &kp O     &kp SQT
+        &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                      &kp K             &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
+                                         &kp LALT  &mt LSHIFT SPACE &hlkr NUMS 0                    &mo NAV   &mt RSHIFT SPACE  TD_GUIMENU
       >;
     };
 
     // 1 - Numbers, symbols, F-keys
     nums_layer {
       bindings = <
-        &kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                                            &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans
-        &trans     &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                                               &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp F11
-        &kp GRAVE  &kp F1    &kp F2  &kp F3    &kp F4    &kp F5                                               &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F12
-                                               &trans    &trans     &none                           &kp LGUI  &trans     &trans
+        &gresc  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                                               &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans
+        &trans  &kp N1    &kp N2  &kp N3    &kp N4    &kp N5                                                  &kp N6     &kp N7    &kp N8    &kp N9    &kp N0    &kp F11
+        &trans  &kp F1    &kp F2  &kp F3    &kp F4    &kp F5                                                  &kp F6     &kp F7    &kp F8    &kp F9    &kp F10   &kp F12
+                                            &trans    &kp ESC  &none                                &kp RGUI  &trans     &trans
       >;
     };
 
