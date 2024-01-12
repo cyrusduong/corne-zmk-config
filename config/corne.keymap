@@ -53,7 +53,7 @@
 };
 
 / {
-  behaviors{ 
+  behaviors{
     td0: tap_dance_0 {
       compatible = "zmk,behavior-tap-dance";
       label = "GUI_MENU";
@@ -84,11 +84,11 @@
       bindings = <&kp BSPC>, <&kp DEL>;
       mods = <MOD_LSFT>;
     };
-    
+
     gresc: grave_escape {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp ESC>, <&kp GRAVE>;
+      bindings = <&kp GRAVE>, <&kp ESC>;
       mods = <(MOD_RGUI|MOD_RSFT)>;
     };
   };
@@ -103,7 +103,7 @@
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
-    st_esc { 
+    st_esc {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <15 16>; // S T
       bindings = <&kp ESC>;
@@ -117,14 +117,14 @@
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
-    ne_esc { 
+    ne_esc {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <19 20>; // N E
       bindings = <&kp ESC>;
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
-    combo_menu { 
+    combo_menu {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <32 33>; // COMMA DOT
       bindings = <&kp K_CMENU>;
@@ -179,10 +179,10 @@
     // 2 - Navgation, Window Mgmt, Media
     nav_layer {
       bindings = <
-        &trans  &none    MV_LEFT  MV_UP  MV_DOWN  MV_RIGHT                                                 &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &kp MINUS  &kp EQUAL
-        &trans  &none    FC_LEFT  FC_UP  FC_DOWN  FC_RIGHT                                                 &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp LBKT   &kp RBKT 
-        &none   &tog BT  &none    &none  &kp DEL  &kp PSCRN                                                &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &kp BSLH
-                                         &trans   &trans     &mo NAV                                &none  &trans      &trans
+        &trans  &none     &kp LPAR   &kp RPAR  kp PSCRN   &none                                            &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &kp MINUS  &kp EQUAL
+        &trans  &kp PLUS  &kp LBKT   &kp RBKT  &kp EQUAL  &kp UNDER                                        &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp LBKT   &kp RBKT
+        &trans  &tog BT   &kp MINUS  &kp BSPC  &kp DEL    &none                                            &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &kp BSLH
+                                               &trans     &trans     &kp LGUI                       &none  &trans      &trans
       >;
     };
 
