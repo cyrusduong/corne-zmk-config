@@ -179,9 +179,9 @@
     // 2 - Navgation, Window Mgmt, Media
     nav_layer {
       bindings = <
-        &trans  &none     &kp LBRC   &kp RBRC  &kp PSCRN  &none                                            &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &kp MINUS  &kp EQUAL
-        &trans  &kp PLUS  &kp LBKT   &kp RBKT  &kp EQUAL  &kp UNDER                                        &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp LBKT   &kp RBKT
-        &trans  &tog BT   &kp MINUS  &kp BSPC  &kp DEL    &none                                            &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp C_PP   &kp BSLH
+        &trans  &kp LT    &kp LBRC   &kp RBRC  &kp PSCRN  &kp GT                                           &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &kp MINUS  &kp EQUAL
+        &trans  &kp PLUS  &kp LBKT   &kp RBKT  &kp EQUAL  &kp PIPE                                         &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp LBKT   &kp RBKT
+        &trans  &tog BT   &kp MINUS  &kp BSPC  &kp DEL    &kp UNDER                                        &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp BSLH   &kp C_PP
                                                &trans     &trans     &kp LGUI                       &none  &trans      &trans
       >;
     };
