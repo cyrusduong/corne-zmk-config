@@ -18,7 +18,7 @@
 
 // TAP_DANCE settings
 #define TAP_DANCE_MS 200
-#define HOLD_TAP_MS 175
+#define HOLD_TAP_MS 150
 // This makes combos explicit, helps prevent rolling when typing normally
 #define COMBO_TIMEOUT_MS 16
 #define PRIOR_IDLE_MS 125
@@ -155,7 +155,7 @@
         &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                         &kp J             &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
         &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                         &kp M             &kp N        &kp E      &kp I    &kp O     &kp SQT
         &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                         &kp K             &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &mt LSHIFT SPACE &hlkr NUMS 0                    &hlkr NAV 1  &mt RSHIFT SPACE  TD_GUIMENU
+                                         &kp LALT  &kp SPACE &hlkr NUMS 0                           &hlkr NAV 1  &mt RSHIFT SPACE  TD_GUIMENU
       >;
     };
 
