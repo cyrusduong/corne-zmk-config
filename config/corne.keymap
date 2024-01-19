@@ -86,6 +86,17 @@
     };
   };
 
+  macros {
+    esc_enter: esc_enter {
+      label = "ESC_THEN_ENTER";
+      compatible = " zmk,behavior-macro";
+      #binding-cells = <0>;
+      wait-ms = <40>;
+      tap-ms = <40>;
+      bindings = <&kp ESC &kp ENTER>;
+    }
+  }
+
   combos {
     compatible = "zmk,combos";
 
@@ -118,11 +129,11 @@
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
-    nei_enter_then_esc {
+    nei_enter_esc {
       // 30ms+ to avoid having HID notifications grouped at the BLE protocol level and being processed out of order.
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <19 20 21>; // N E I
-      bindings = <&kp ESC ENTER>;
+      bindings = <&esc_enter>;
       require-prior-idle-ms = <PRIOR_IDLE_MS>;
     };
 
