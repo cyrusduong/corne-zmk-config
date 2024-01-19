@@ -86,15 +86,11 @@
 
   macros {
     esc_enter: esc_enter {
-      label = "ESC_THEN_ENTER";
       compatible = " zmk,behavior-macro";
       #binding-cells = <0>;
       wait-ms = <40>;
       tap-ms = <40>;
-      bindings
-        = <&kp ESC>
-        , <&kp ENTER>
-        ;
+      bindings = <&macro_tap &kp ESC &kp ENTER>;
     };
   };
 
