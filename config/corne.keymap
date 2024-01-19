@@ -56,7 +56,6 @@
   behaviors{
     td0: tap_dance_0 {
       compatible = "zmk,behavior-tap-dance";
-      label = "GUI_MENU";
       #binding-cells = <0>;
       tapping-term-ms = <TAP_DANCE_MS>;
       bindings = <&kp RGUI>, <&kp K_CMENU>;
@@ -64,7 +63,6 @@
 
     td1: tap_dance_1 {
       compatible = "zmk,behavior-tap-dance";
-      label = "SHIFT_CAPSLOCK";
       #binding-cells = <0>;
       tapping-term-ms = <TAP_DANCE_MS>;
       bindings = <&kp RSHIFT>, <&kp CAPSLOCK>;
@@ -93,7 +91,10 @@
       #binding-cells = <0>;
       wait-ms = <40>;
       tap-ms = <40>;
-      bindings = <&kp ESC &kp ENTER>;
+      bindings
+        = <&kp ESC>
+        , <&kp ENTER>
+        ;
     };
   };
 
