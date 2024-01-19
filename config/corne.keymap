@@ -94,8 +94,8 @@
       wait-ms = <40>;
       tap-ms = <40>;
       bindings = <&kp ESC &kp ENTER>;
-    }
-  }
+    };
+  };
 
   combos {
     compatible = "zmk,combos";
