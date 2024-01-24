@@ -113,6 +113,13 @@
     //   require-prior-idle-ms = <PRIOR_IDLE_MS>;
     // };
 
+    fp_esc {
+      timeout-ms = <COMBO_TIMEOUT_MS>;
+      key-positions = <3 4>; // F P
+      bindings = <&kp LG(P)>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
+    };
+
     ei_enter {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <20 21>; // E I
