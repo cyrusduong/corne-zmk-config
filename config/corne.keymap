@@ -18,9 +18,9 @@
 
 // TAP_DANCE settings
 #define TAP_DANCE_MS 200
-#define HOLD_TAP_MS 150
+#define HOLD_TAP_MS 200
 // This makes combos explicit, helps prevent rolling when typing normally
-#define COMBO_TIMEOUT_MS 16
+#define COMBO_TIMEOUT_MS 24
 #define PRIOR_IDLE_MS 100
 
 // MACROS to make the the code easier to read
@@ -74,6 +74,7 @@
       flavor = "balanced";
       tapping-term-ms = <HOLD_TAP_MS>;
       bindings = <&mo>, <&key_repeat>;
+      retro-tap;
     };
 
     gresc: grave_escape {
