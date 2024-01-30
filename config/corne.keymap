@@ -177,10 +177,10 @@
     // 0 - Base layer
     colemakdh_layer {
       bindings = <
-        &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                     &kp J             &kp L        &kp U      &kp Y    &kp SEMI  &kp BSPC
-        &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                     &kp M             &kp N        &kp E      &kp I    &kp O     &kp SQT
-        &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                     &kp K             &kp H        &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &kp SPACE &mo NUMS                               &mo NAV  &mt RSHIFT SPACE  TD_GUIMENU
+        &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                     &kp J      &kp L       &kp U      &kp Y    &kp SEMI  &kp BSPC
+        &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                     &kp M      &kp N       &kp E      &kp I    &kp O     &kp SQT
+        &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                     &kp K      &kp H       &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
+                                         &kp LALT  &kp SPACE &mo NUMS                               &mo NAV  &kp SPACE  TD_GUIMENU
       >;
     };
 
@@ -207,10 +207,10 @@
     // 3 - BT, Media, LEDs, Misc, and keyboard settings
     keeb_layer {
       bindings = <
-        &none  &none         &none         &none         &none        &none                                &rgb_ug RGB_SPD                     &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI  &none  &out OUT_TOG
-        &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none        &none                                &rgb_ug RGB_EFR                     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none  &none
-        &none  &tog BT       &none         &none         &none        &none                                &rgb_ug RGB_COLOR_HSB(360, 0, 100)  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none  &bt BT_CLR
-                                                         &bootloader  &none  &none                  &none  &rgb_ug RGB_TOG  &bootloader
+        &none  &none         &none         &none         &none         &none                               &rgb_ug RGB_SPD                     &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SPI  &none  &out OUT_TOG
+        &none  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_TOG  &none                               &rgb_ug RGB_EFR                     &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none  &none
+        &none  &tog BT       &none         &none         &none         &bt BT_CLR                          &rgb_ug RGB_COLOR_HSB(360, 0, 100)  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none  &none
+                                                         &bootloader   &none  &none                 &none  &rgb_ug RGB_TOG  &bootloader
       >;
     };
   };
