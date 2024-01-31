@@ -20,8 +20,8 @@
 #define TAP_DANCE_MS 200
 #define HOLD_TAP_MS 200
 // This makes combos explicit, helps prevent rolling when typing normally
-#define COMBO_TIMEOUT_MS 24
-#define PRIOR_IDLE_MS 100
+#define COMBO_TIMEOUT_MS 20
+#define PRIOR_IDLE_MS 80
 
 // MACROS to make the the code easier to read
 // include name or reference in keymap
