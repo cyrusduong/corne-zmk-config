@@ -29,39 +29,15 @@
 //      name        reference             keys, key2
 //
 // Tap Dances
-#define TD_GUIMENU  &td0               // LGUI K_CMENU
-#define TD_SHLOCK   &td1               // RSHIFT CAPSLOCK
-// Focus Window (+i3 bindings)
-#define FC_LEFT     &kp LG(LEFT)       // LGUI + LEFT
-#define FC_RIGHT    &kp LG(RIGHT)      // LGUI + RIGHT
-#define FC_UP       &kp LG(UP)         // LGUI + UP
-#define FC_DOWN     &kp LG(DOWN)       // LGUI + DOWN
-// Move Window (+i3 bindings)
-#define MV_LEFT     &kp LS(LG(LEFT))   // LSHIFT + LGUI + LEFT
-#define MV_RIGHT    &kp LS(LG(RIGHT))  // LSHIFT + LGUI + RIGHT
-#define MV_UP       &kp LS(LG(UP))     // LSHIFT + LGUI + UP
-#define MV_DOWN     &kp LS(LG(DOWN))   // LSHIFT + LGUI + DOWN
+#define TD_SHLOCK   &shl               // RSHIFT CAPSLOCK
 
 &led_strip {
     chain-length = <27>;
 };
 
-&mt {
-    tapping-term-ms = <HOLD_TAP_MS>;
-    flavor = "balanced";
-    retro-tap;
-};
-
 / {
   behaviors{
-    td0: tap_dance_0 {
-      compatible = "zmk,behavior-tap-dance";
-      #binding-cells = <0>;
-      tapping-term-ms = <TAP_DANCE_MS>;
-      bindings = <&kp RGUI>, <&kp K_CMENU>;
-    };
-
-    td1: tap_dance_1 {
+    shl: tap_dance_shift_lock {
       compatible = "zmk,behavior-tap-dance";
       #binding-cells = <0>;
       tapping-term-ms = <TAP_DANCE_MS>;
@@ -71,10 +47,11 @@
     hlkr: hold_layer_key_repeat {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      flavor = "balanced";
+      flavor = "hold-preferred";
+      quick-tap = -1;
       tapping-term-ms = <HOLD_TAP_MS>;
+      require-prior-idle-ms = <PRIOR_IDLE_MS>;
       bindings = <&mo>, <&key_repeat>;
-      retro-tap;
     };
 
     gresc: grave_escape {
@@ -150,26 +127,12 @@
     };
 
 
-    // xc_copy {
-    //   timeout-ms = <COMBO_TIMEOUT_MS>;
-    //   key-positions = <X C>;
-    //   bindings = <&kp LC(C)>;
-    // };
-
     cd_paste {
       timeout-ms = <COMBO_TIMEOUT_MS>;
       key-positions = <27 28>;
       bindings = <&kp LS(LC(V))>;
     };
   };
-
-  // conditional_layers {
-  //   compatible = "zmk,conditional-layers";
-  //   tri_layer {
-  //     if-layers = <NUMS NAV>;
-  //     then-layer = <BT>;
-  //   };
-  // };
 
   keymap {
     compatible = "zmk,keymap";
@@ -180,7 +143,7 @@
         &kp TAB    &kp Q   &kp W  &kp F  &kp P     &kp B                                                     &kp J      &kp L       &kp U      &kp Y    &kp SEMI  &kp BSPC
         &kp LCTRL  &kp A   &kp R  &kp S  &kp T     &kp G                                                     &kp M      &kp N       &kp E      &kp I    &kp O     &kp SQT
         &kp LSHFT  &kp Z   &kp X  &kp C  &kp D     &kp V                                                     &kp K      &kp H       &kp COMMA  &kp DOT  &kp FSLH  TD_SHLOCK
-                                         &kp LALT  &kp SPACE &mo NUMS                               &mo NAV  &kp SPACE  TD_GUIMENU
+                                         &kp LALT  &kp SPACE &hlkr NUMS 0                           &mo NAV  &kp SPACE  &kp RGUI
       >;
     };
 
@@ -199,7 +162,7 @@
       bindings = <
         &trans  &kp LT    &kp LBRC   &kp RBRC  &kp PSCRN  &kp PIPE                                         &kp HOME    &kp PG_DN     &kp PG_UP     &kp END     &kp MINUS  &kp EQUAL
         &trans  &kp PLUS  &kp LBKT   &kp RBKT  &kp EQUAL  &kp GT                                           &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT   &kp LBKT   &kp RBKT
-        &trans  &tog BT   &kp MINUS  &kp BSPC  &kp UNDER  &kp DEL                                          &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp BSLH   &kp C_PP
+        &trans  &tog BT   &kp MINUS  &kp BSPC  &kp DEL    &kp UNDER                                        &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT  &kp BSLH   &kp C_PP
                                                &trans     &trans     &kp LGUI                       &none  &trans      &trans
       >;
     };
